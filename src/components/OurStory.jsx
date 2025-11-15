@@ -94,13 +94,13 @@ export default function OurStory() {
           >
             {/* Golden Gradient Border */}
             <div
-              className="relative rounded-3xl p-1 shadow-2xl"
+              className="relative rounded-[2rem] p-1 shadow-2xl"
               style={{
                 background:
                   "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
               }}
             >
-              <div className="relative rounded-2xl overflow-hidden bg-white">
+              <div className="relative rounded-[1.75rem] overflow-hidden bg-white">
                 <div className="aspect-[4/3] bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
                   {/* Placeholder for cafe image */}
                   <div className="text-gray-500 text-center">

@@ -6,15 +6,20 @@ import { motion } from "framer-motion";
 import { fadeInUp, fadeInLeft, fadeInRight } from "@/utils/animations";
 
 export default function Social() {
+  const gradientBorderStyle = {
+    background:
+      "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
+  };
+
   const socialImages = [
-    { id: 1, src: "/images/social/111.jpg", alt: "Social 1" },
-    { id: 2, src: "/images/social/116.jpg", alt: "Social 2" },
-    { id: 3, src: "/images/social/114.jpg", alt: "Social 3" },
-    { id: 4, src: "/images/social/113.jpg", alt: "Social 4" },
-    { id: 5, src: "/images/social/112.jpg", alt: "Social 5" },
-    { id: 6, src: "/images/social/115.jpg", alt: "Social 6" },
-    { id: 7, src: "/images/social/117.jpg", alt: "Social 7" },
-    { id: 8, src: "/images/social/118.jpg", alt: "Social 8" },
+    { id: 1, src: "/images/social/111.jpg", alt: "صورة اجتماعية 1" },
+    { id: 2, src: "/images/social/116.jpg", alt: "صورة اجتماعية 2" },
+    { id: 3, src: "/images/social/114.jpg", alt: "صورة اجتماعية 3" },
+    { id: 4, src: "/images/social/113.jpg", alt: "صورة اجتماعية 4" },
+    { id: 5, src: "/images/social/112.jpg", alt: "صورة اجتماعية 5" },
+    { id: 6, src: "/images/social/115.jpg", alt: "صورة اجتماعية 6" },
+    { id: 7, src: "/images/social/117.jpg", alt: "صورة اجتماعية 7" },
+    { id: 8, src: "/images/social/118.jpg", alt: "صورة اجتماعية 8" },
   ];
 
   return (
@@ -36,15 +41,20 @@ export default function Social() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="relative aspect-square overflow-hidden"
+                className="relative aspect-square p-2"
               >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 50vw, 12.5vw"
-                />
+                {/* Golden Gradient Border */}
+                <div className="relative rounded-2xl p-1 shadow-lg h-full" style={gradientBorderStyle}>
+                  <div className="relative w-full h-full rounded-xl overflow-hidden" style={{ backgroundColor: "var(--bg-color)" }}>
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 50vw, 12.5vw"
+                    />
+                  </div>
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -58,24 +68,34 @@ export default function Social() {
             className="order-2 lg:order-1 flex items-center justify-center"
             style={{ backgroundColor: 'var(--heading-color)' }}
           >
-            <div className="text-left p-12 lg:p-16" style={{ color: 'var(--bg-color)' }}>
+            <div className="text-center lg:text-right p-12 lg:p-16" style={{ color: 'var(--bg-color)' }}>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2, duration: 0.6 }}
-                className="text-2xl sm:text-4xl lg:text-5xl font-extralight mb-2 leading-tight"
+                className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight"
+                style={{ 
+                  fontFamily: 'serif',
+                  textShadow: '0 1px 4px rgba(6, 76, 76, 0.3)'
+                }}
               >
-                Connect with World Cup Cafe
+                تواصل مع كأس
+                <br />
+                العالم كافيه
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="text-sm sm:text-base font-extralight"
+                className="text-sm sm:text-base lg:text-lg font-light"
+                style={{ 
+                  fontFamily: 'serif',
+                  opacity: 0.9
+                }}
               >
-                Follow our coffee journey.
+                تابع رحلتنا في عالم القهوة العربية الأصيلة
               </motion.p>
             </div>
           </motion.div>
