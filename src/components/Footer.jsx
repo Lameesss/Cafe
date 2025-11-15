@@ -16,7 +16,13 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full min-h-[60vh] lg:h-[calc(100vh-64px)] flex flex-col justify-between py-6 lg:py-16 px-4 sm:px-6 lg:px-6 overflow-hidden" style={{ backgroundColor: 'var(--heading-color)', color: 'var(--bg-color)' }}>
+    <footer 
+      className="w-full min-h-[60vh] lg:h-[calc(100vh-64px)] flex flex-col justify-between py-6 lg:py-16 px-4 sm:px-6 lg:px-6 overflow-hidden" 
+      style={{ 
+        background: 'linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)',
+        color: 'var(--bg-color)' 
+      }}
+    >
       <div className="max-w-7xl mx-auto w-full flex flex-col justify-between h-full">
         {/* Top Section - Newsletter */}
         <motion.div
@@ -27,11 +33,22 @@ export default function Footer() {
           className="mb-6 lg:mb-16"
         >
           <div className="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-8">
-            <h2 className="text-base sm:text-lg lg:text-xl font-bold lg:whitespace-nowrap">
-              Ready for great coffee?
-              <br />
-              Join our community!
-            </h2>
+            <div className="space-y-2">
+              <h2 className="text-base sm:text-lg lg:text-xl font-bold lg:whitespace-nowrap">
+                Ready for great coffee?
+                <br />
+                Join our community!
+              </h2>
+              <p 
+                className="text-sm lg:text-base font-light italic"
+                style={{
+                  fontFamily: 'serif',
+                  opacity: 0.9
+                }}
+              >
+                انضم إلى مجتمع عشاق القهوة العربية
+              </p>
+            </div>
             <form onSubmit={handleSubscribe} className="flex gap-0 flex-1 w-full">
               <input
                 type="email"
@@ -72,7 +89,18 @@ export default function Footer() {
         >
           {/* About Us Column */}
           <div>
-            <h3 className="text-xs sm:text-sm font-bold mb-4 uppercase">About Us</h3>
+            <div className="mb-4">
+              <h3 className="text-xs sm:text-sm font-bold uppercase">About Us</h3>
+              <p 
+                className="text-xs font-light mt-1"
+                style={{
+                  fontFamily: 'serif',
+                  opacity: 0.8
+                }}
+              >
+                من نحن
+              </p>
+            </div>
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
                 <Link
@@ -135,7 +163,18 @@ export default function Footer() {
 
           {/* Support Column */}
           <div>
-            <h3 className="text-xs sm:text-sm font-bold mb-4 uppercase">Support</h3>
+            <div className="mb-4">
+              <h3 className="text-xs sm:text-sm font-bold uppercase">Support</h3>
+              <p 
+                className="text-xs font-light mt-1"
+                style={{
+                  fontFamily: 'serif',
+                  opacity: 0.8
+                }}
+              >
+                الدعم والمساعدة
+              </p>
+            </div>
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
                 <Link
@@ -190,7 +229,18 @@ export default function Footer() {
 
           {/* Follow Us Column */}
           <div>
-            <h3 className="text-xs sm:text-sm font-bold mb-4 uppercase">Follow Us</h3>
+            <div className="mb-4">
+              <h3 className="text-xs sm:text-sm font-bold uppercase">Follow Us</h3>
+              <p 
+                className="text-xs font-light mt-1"
+                style={{
+                  fontFamily: 'serif',
+                  opacity: 0.8
+                }}
+              >
+                تابعونا على وسائل التواصل
+              </p>
+            </div>
             <div className="flex gap-4">
               {/* Facebook */}
               <a
@@ -324,8 +374,17 @@ export default function Footer() {
             </div>
 
             {/* Copyright */}
-            <div className="text-[10px] sm:text-xs" style={{ color: 'var(--bg-color)', opacity: 0.8 }}>
-              ©2025 World Cup Cafe, Inc.
+            <div className="text-[10px] sm:text-xs space-y-1" style={{ color: 'var(--bg-color)', opacity: 0.8 }}>
+              <div>©2025 World Cup Cafe, Inc.</div>
+              <div 
+                className="text-[9px] sm:text-[10px]"
+                style={{
+                  fontFamily: 'serif',
+                  opacity: 0.7
+                }}
+              >
+                جميع الحقوق محفوظة - كأس العالم كافيه
+              </div>
             </div>
           </div>
         </motion.div>

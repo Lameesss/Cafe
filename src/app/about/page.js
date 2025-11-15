@@ -4,218 +4,404 @@ import { motion } from "framer-motion";
 import { fadeInUp } from "@/utils/animations";
 import Image from "next/image";
 import Link from "next/link";
+import OurStory from "@/components/OurStory";
 
 export default function About() {
+  const gradientTextStyle = {
+    background: "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    backgroundClip: "text",
+  };
+
+  const gradientBorderStyle = {
+    background: "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
+  };
+
   return (
-    <main className="pt-16" style={{ backgroundColor: 'var(--bg-color)' }}>
-      {/* Hero Section */}
-      <section className="py-20 lg:py-32" style={{ backgroundColor: 'var(--bg-color)' }}>
-        <div className="max-w-7xl mx-auto px-8 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="mb-8"
-            >
-              <div className="w-24 h-24 mx-auto mb-6 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--heading-color)' }}>
-                <svg className="w-12 h-12" style={{ color: 'var(--bg-color)' }} fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34c-.39-.39-1.02-.39-1.41 0L9 12.25 11.75 15l8.96-8.96c.39-.39.39-1.02 0-1.41z"/>
-                </svg>
-              </div>
-            </motion.div>
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6" style={{ color: 'var(--heading-color)' }}>عن مقهى كأس العالم</h1>
-            <h2 className="text-3xl lg:text-5xl font-bold mb-8" style={{ color: 'var(--heading-color)' }}>ABOUT WORLD CUP CAFE</h2>
-            <p className="text-lg lg:text-xl max-w-4xl mx-auto leading-relaxed" style={{ color: 'var(--text-color)' }}>
-              Experience the authentic flavors of Arabia in the heart of Dubai. Where traditional coffee culture meets modern luxury, creating unforgettable moments one cup at a time.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+    <main className="pt-20" style={{ backgroundColor: 'var(--bg-color)' }}>
+      {/* OurStory Component */}
+      <OurStory />
 
       {/* Our Story */}
-      <section className="py-16 lg:py-24" style={{ backgroundColor: 'var(--bg-color)' }}>
+      <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+            {/* Text Content */}
             <motion.div
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              variants={fadeInUp}
+              transition={{ duration: 0.8 }}
+              className="lg:order-1"
             >
-              <div className="mb-6">
-                <h3 className="text-xl mb-2" style={{ color: 'var(--heading-color)' }}>قصتنا</h3>
-                <h2 className="text-3xl lg:text-4xl font-bold mb-6" style={{ color: 'var(--heading-color)' }}>Our Story</h2>
+              {/* Section Header */}
+              <div className="mb-8">
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2, duration: 0.6 }}
+                  className="text-lg lg:text-xl font-light mb-4"
+                  style={{
+                    ...gradientTextStyle,
+                    fontFamily: 'serif',
+                  }}
+                >
+                  قصتنا
+                </motion.p>
+                
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3, duration: 0.6 }}
+                  className="text-3xl lg:text-5xl font-bold uppercase leading-[1.1] tracking-[0.15em] mb-6"
+                  style={{
+                    ...gradientTextStyle,
+                    textShadow: "0 4px 16px rgba(0, 0, 0, 0.3)",
+                  }}
+                >
+                  OUR HERITAGE
+                </motion.h2>
+
+                {/* Animated Line */}
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.6, duration: 1.0 }}
+                  className="w-24 h-0.5 mb-8 origin-left"
+                  style={{ backgroundColor: "#edb98a" }}
+                />
               </div>
-              <div className="space-y-6 leading-relaxed" style={{ color: 'var(--text-color)' }}>
-                <p className="text-lg">
-                  Established in 2018 in the vibrant heart of Dubai Marina, World Cup Cafe was born from a passion to bring authentic Arabic coffee culture to the cosmopolitan landscape of the UAE.
-                </p>
-                <p className="text-lg">
-                  Our founders, inspired by traditional Bedouin hospitality and the rich coffee heritage of the Arabian Peninsula, envisioned a space where locals and visitors could experience the true essence of Arabic coffee culture in a modern, luxurious setting.
-                </p>
-                <p className="text-lg">
-                  Today, World Cup Cafe stands as Dubai's premier destination for authentic Arabic coffee, Turkish delights, and Middle Eastern pastries, serving the diverse community of Dubai with warmth, tradition, and excellence.
-                </p>
+
+              {/* Story Content */}
+              <div className="space-y-6">
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4, duration: 0.6 }}
+                  className="text-base lg:text-lg leading-relaxed text-white"
+                >
+                  Born from a passion for authentic Arabian coffee culture, World Cup Cafe represents 
+                  the perfect fusion of traditional Middle Eastern hospitality and contemporary luxury. 
+                  Our journey began with a simple vision: to create a sanctuary where the ancient art 
+                  of coffee preparation meets modern sophistication.
+                </motion.p>
+                
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5, duration: 0.6 }}
+                  className="text-base lg:text-lg leading-relaxed text-white"
+                >
+                  Every cup we serve tells a story of heritage, craftsmanship, and dedication to excellence. 
+                  From the carefully selected beans to the time-honored brewing techniques, we honor the 
+                  rich traditions that have made Arabic coffee a symbol of warmth and hospitality for centuries.
+                </motion.p>
               </div>
             </motion.div>
 
+            {/* Image with Premium Border */}
             <motion.div
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ delay: 0.2 }}
-              className="relative h-96 lg:h-[500px]"
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="lg:order-2 relative"
             >
-              <div className="w-full h-full rounded-lg overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/about1.jpg"
-                  alt="World Cup Cafe Interior"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
+              {/* Golden Gradient Border */}
+              <div className="relative rounded-[2rem] p-1 shadow-2xl" style={gradientBorderStyle}>
+                <div className="relative w-full h-[400px] lg:h-[500px] rounded-[1.75rem] overflow-hidden" style={{ backgroundColor: "var(--bg-color)" }}>
+                  <Image
+                    src="/images/000.png"
+                    alt="World Cup Cafe - Premium Arabic Coffee Experience"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
               </div>
+
+              {/* Decorative Elements */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+                className="absolute -top-6 -right-6 w-24 h-24 rounded-full"
+                style={{
+                  background: "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
+                  opacity: 0.8,
+                }}
+              />
+              
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.8, duration: 0.6 }}
+                className="absolute -bottom-8 -left-8 w-20 h-20 rounded-full border-4"
+                style={{ borderColor: "#edb98a", opacity: 0.6 }}
+              />
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Our Specialties */}
-      <section className="py-16 lg:py-24" style={{ backgroundColor: 'var(--bg-color)' }}>
+      <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-8 lg:px-12">
+          {/* Section Header */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center mb-12"
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16 lg:mb-20 max-w-4xl mx-auto"
           >
-            <h3 className="text-xl mb-2" style={{ color: 'var(--heading-color)' }}>تخصصاتنا</h3>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: 'var(--heading-color)' }}>Our Specialties</h2>
-            <p className="max-w-2xl mx-auto text-lg" style={{ color: 'var(--text-color)' }}>
-              Discover the authentic tastes that make World Cup Cafe a unique destination in Dubai
-            </p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="text-lg lg:text-xl font-light mb-4"
+              style={{
+                ...gradientTextStyle,
+                fontFamily: 'serif',
+              }}
+            >
+              تخصصاتنا
+            </motion.p>
+            
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="text-3xl lg:text-5xl font-bold uppercase leading-[1.1] tracking-[0.15em] mb-6"
+              style={{
+                ...gradientTextStyle,
+                textShadow: "0 4px 16px rgba(0, 0, 0, 0.3)",
+              }}
+            >
+              OUR SPECIALTIES
+            </motion.h2>
+
+            <motion.div
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5, duration: 1.0 }}
+              className="w-32 h-0.5 mx-auto mb-6 origin-center"
+              style={{ backgroundColor: "#edb98a" }}
+            />
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="text-lg lg:text-xl leading-relaxed text-white"
+            >
+              Discover the authentic tastes and experiences that define our premium Arabic cafe
+            </motion.p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Specialties Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {/* Arabic Coffee */}
             <motion.div
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              variants={fadeInUp}
-              className="p-8 rounded-lg shadow-lg"
-              style={{ backgroundColor: 'var(--heading-color)' }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="relative group"
             >
-              <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style={{ backgroundColor: 'var(--bg-color)' }}>
-                <svg className="w-8 h-8" style={{ color: 'var(--heading-color)' }} fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M18.5,3H6C5.45,3 5,3.45 5,4V18C5,18.55 5.45,19 6,19H10V21H8V23H16V21H14V19H18.5C19.05,19 19.5,18.55 19.5,18V4C19.5,3.45 19.05,3 18.5,3M18.5,18H6V4H18.5V18Z"/>
-                </svg>
+              {/* Golden Gradient Border */}
+              <div className="relative rounded-[2rem] p-1 shadow-2xl" style={gradientBorderStyle}>
+                <div className="relative p-8 lg:p-10 rounded-[1.75rem] text-center" style={{ backgroundColor: "var(--bg-color)" }}>
+                  {/* Icon */}
+                  <div className="w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto" style={gradientBorderStyle}>
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: "var(--bg-color)" }}>
+                      <svg className="w-8 h-8" style={{ color: "#edb98a" }} fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M2,21V19H20V21H2M20,8V5L18,5V3A1,1 0 0,0 17,2H7A1,1 0 0,0 6,3V5H4V8A4,4 0 0,0 8,12H16A4,4 0 0,0 20,8Z"/>
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Arabic Title */}
+                  <h3 className="text-lg lg:text-xl font-bold mb-2" style={{ ...gradientTextStyle, fontFamily: 'serif' }}>
+                    قهوة عربية أصيلة
+                  </h3>
+
+                  {/* English Title */}
+                  <h4 className="text-xl lg:text-2xl font-bold uppercase tracking-wider mb-4" style={gradientTextStyle}>
+                    ARABIC COFFEE
+                  </h4>
+
+                  {/* Description */}
+                  <p className="text-white leading-relaxed">
+                    Traditional Arabic coffee served with dates and authentic Middle Eastern hospitality, 
+                    prepared using time-honored methods passed down through generations.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-center mb-4" style={{ color: 'var(--bg-color)' }}>قهوة عربية</h3>
-              <h4 className="text-lg font-semibold text-center mb-4" style={{ color: 'var(--bg-color)' }}>Arabic Coffee</h4>
-              <p className="text-center" style={{ color: 'var(--bg-color)' }}>
-                Traditional Arabic coffee served with dates and authentic Middle Eastern hospitality, prepared using time-honored methods.
-              </p>
             </motion.div>
 
-            {/* Turkish Delights */}
+            {/* Premium Pastries */}
             <motion.div
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ delay: 0.1 }}
-              className="p-8 rounded-lg shadow-lg"
-              style={{ backgroundColor: 'var(--heading-color)' }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative group"
             >
-              <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style={{ backgroundColor: 'var(--bg-color)' }}>
-                <svg className="w-8 h-8" style={{ color: 'var(--heading-color)' }} fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12,3A9,9 0 0,0 3,12A9,9 0 0,0 12,21A9,9 0 0,0 21,12A9,9 0 0,0 12,3M12,5A7,7 0 0,1 19,12A7,7 0 0,1 12,19A7,7 0 0,1 5,12A7,7 0 0,1 12,5M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7Z"/>
-                </svg>
+              {/* Golden Gradient Border */}
+              <div className="relative rounded-[2rem] p-1 shadow-2xl" style={gradientBorderStyle}>
+                <div className="relative p-8 lg:p-10 rounded-[1.75rem] text-center" style={{ backgroundColor: "var(--bg-color)" }}>
+                  {/* Icon */}
+                  <div className="w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto" style={gradientBorderStyle}>
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: "var(--bg-color)" }}>
+                      <svg className="w-8 h-8" style={{ color: "#edb98a" }} fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12,3A9,9 0 0,0 3,12A9,9 0 0,0 12,21A9,9 0 0,0 21,12A9,9 0 0,0 12,3M12,5A7,7 0 0,1 19,12A7,7 0 0,1 12,19A7,7 0 0,1 5,12A7,7 0 0,1 12,5Z"/>
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Arabic Title */}
+                  <h3 className="text-lg lg:text-xl font-bold mb-2" style={{ ...gradientTextStyle, fontFamily: 'serif' }}>
+                    حلويات شرقية فاخرة
+                  </h3>
+
+                  {/* English Title */}
+                  <h4 className="text-xl lg:text-2xl font-bold uppercase tracking-wider mb-4" style={gradientTextStyle}>
+                    PREMIUM PASTRIES
+                  </h4>
+
+                  {/* Description */}
+                  <p className="text-white leading-relaxed">
+                    Handcrafted Middle Eastern sweets and pastries made with premium ingredients, 
+                    bringing authentic Ottoman and Levantine flavors to your table.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-center mb-4" style={{ color: 'var(--bg-color)' }}>حلويات تركية</h3>
-              <h4 className="text-lg font-semibold text-center mb-4" style={{ color: 'var(--bg-color)' }}>Turkish Delights</h4>
-              <p className="text-center" style={{ color: 'var(--bg-color)' }}>
-                Handcrafted Turkish delights and baklava made with premium ingredients, bringing authentic Ottoman flavors to Dubai.
-              </p>
             </motion.div>
 
-            {/* Shisha Experience */}
+            {/* Luxury Atmosphere */}
             <motion.div
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ delay: 0.2 }}
-              className="p-8 rounded-lg shadow-lg"
-              style={{ backgroundColor: 'var(--heading-color)' }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative group"
             >
-              <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style={{ backgroundColor: 'var(--bg-color)' }}>
-                <svg className="w-8 h-8" style={{ color: 'var(--heading-color)' }} fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4Z"/>
-                </svg>
+              {/* Golden Gradient Border */}
+              <div className="relative rounded-[2rem] p-1 shadow-2xl" style={gradientBorderStyle}>
+                <div className="relative p-8 lg:p-10 rounded-[1.75rem] text-center" style={{ backgroundColor: "var(--bg-color)" }}>
+                  {/* Icon */}
+                  <div className="w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto" style={gradientBorderStyle}>
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: "var(--bg-color)" }}>
+                      <svg className="w-8 h-8" style={{ color: "#edb98a" }} fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4Z"/>
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Arabic Title */}
+                  <h3 className="text-lg lg:text-xl font-bold mb-2" style={{ ...gradientTextStyle, fontFamily: 'serif' }}>
+                    أجواء فاخرة
+                  </h3>
+
+                  {/* English Title */}
+                  <h4 className="text-xl lg:text-2xl font-bold uppercase tracking-wider mb-4" style={gradientTextStyle}>
+                    LUXURY EXPERIENCE
+                  </h4>
+
+                  {/* Description */}
+                  <p className="text-white leading-relaxed">
+                    Immerse yourself in an atmosphere of refined elegance, where traditional Arabian 
+                    hospitality meets contemporary luxury in every detail.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-center mb-4" style={{ color: 'var(--bg-color)' }}>شيشة فاخرة</h3>
-              <h4 className="text-lg font-semibold text-center mb-4" style={{ color: 'var(--bg-color)' }}>Premium Shisha</h4>
-              <p className="text-center" style={{ color: 'var(--bg-color)' }}>
-                Premium shisha experience with finest tobacco blends in a sophisticated, comfortable atmosphere perfect for relaxation.
-              </p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Location */}
-      <section className="py-16 lg:py-24" style={{ backgroundColor: 'var(--bg-color)' }}>
+      {/* Call to Action */}
+      <section className="py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-8 lg:px-12">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center"
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-4xl mx-auto"
           >
-            <h3 className="text-xl mb-2" style={{ color: 'var(--heading-color)' }}>موقعنا</h3>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6" style={{ color: 'var(--heading-color)' }}>Our Location</h2>
-            <div className="max-w-2xl mx-auto">
-              <p className="mb-4 text-lg" style={{ color: 'var(--text-color)' }}>
-                <strong style={{ color: 'var(--heading-color)' }}>World Cup Cafe</strong><br />
-                Dubai Marina Walk, Marina Promenade<br />
-                Dubai Marina, Dubai<br />
-                United Arab Emirates
-              </p>
-              <p className="text-lg mb-8" style={{ color: 'var(--text-color)' }}>
-                Located in the heart of Dubai Marina with stunning waterfront views, serving authentic Arabic coffee and Middle Eastern delicacies since 2018.
-              </p>
+            {/* Arabic Quote */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="text-2xl lg:text-3xl font-light mb-6"
+              style={{
+                ...gradientTextStyle,
+                fontFamily: 'serif',
+              }}
+            >
+              "حيث تلتقي التقاليد العربية بالرفاهية العصرية"
+            </motion.p>
+
+            {/* English Quote */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="text-xl lg:text-2xl font-light italic mb-12 text-white"
+              style={{ opacity: 0.9 }}
+            >
+              "Where Arabian traditions meet modern luxury"
+            </motion.p>
+
+            {/* Call to Action Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+            >
               <Link
-                href="/contact"
-                className="inline-block px-8 py-4 text-sm font-bold uppercase tracking-wider transition-all duration-300"
+                href="/menu"
+                className="group relative inline-block px-12 py-4 text-sm font-bold uppercase tracking-[0.3em] transition-all duration-500 overflow-hidden"
                 style={{
-                  backgroundColor: 'var(--heading-color)',
-                  color: 'var(--bg-color)'
+                  border: "2px solid rgba(237, 185, 138, 0.4)",
+                  color: "#edb98a",
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = 'transparent';
-                  e.target.style.color = 'var(--heading-color)';
-                  e.target.style.border = '2px solid var(--heading-color)';
+                  e.target.style.borderColor = "#edb98a";
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = 'var(--heading-color)';
-                  e.target.style.color = 'var(--bg-color)';
-                  e.target.style.border = 'none';
+                  e.target.style.borderColor = "rgba(237, 185, 138, 0.4)";
                 }}
               >
-                Get Directions
+                <span className="relative z-10 group-hover:text-black transition-colors duration-500">
+                  EXPLORE OUR MENU
+                </span>
+                <div
+                  className="absolute inset-0 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500"
+                  style={{
+                    background: "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
+                  }}
+                />
               </Link>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>

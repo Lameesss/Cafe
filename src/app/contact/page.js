@@ -1,308 +1,380 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeInUp } from "@/utils/animations";
-import { useState } from "react";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', phone: '', message: '' });
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   return (
     <main className="pt-16" style={{ backgroundColor: 'var(--bg-color)' }}>
-      {/* Hero Section */}
-      <section className="py-20 lg:py-32" style={{ backgroundColor: 'var(--bg-color)' }}>
-        <div className="max-w-7xl mx-auto px-8 lg:px-12">
+      {/* Hero Section with elegant design */}
+      <section className="text-white py-24 lg:py-36 relative overflow-hidden" style={{ backgroundColor: 'var(--bg-color)' }}>
+        {/* Subtle radial gradient background */}
+        <div className="absolute inset-0 bg-gradient-radial from-yellow-500/5 via-transparent to-transparent opacity-30" />
+        
+        <div className="max-w-7xl mx-auto px-8 lg:px-12 relative">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center space-y-8"
           >
+            {/* Top decorative line */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="mb-8"
-            >
-              <div className="w-24 h-24 mx-auto mb-6 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--heading-color)' }}>
-                <svg className="w-12 h-12" style={{ color: 'var(--bg-color)' }} fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z"/>
-                </svg>
-              </div>
-            </motion.div>
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6" style={{ color: 'var(--heading-color)' }}>تواصل معنا</h1>
-            <h2 className="text-3xl lg:text-5xl font-bold mb-8" style={{ color: 'var(--heading-color)' }}>GET IN TOUCH</h2>
-            <p className="text-lg lg:text-xl max-w-4xl mx-auto leading-relaxed" style={{ color: 'var(--text-color)' }}>
-              Experience authentic Arabic hospitality at World Cup Cafe. We're here to serve you the finest coffee and create memorable moments in Dubai Marina.
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="w-32 h-px mx-auto"
+              style={{
+                background: "linear-gradient(to right, transparent, #edb98a, transparent)"
+              }}
+            />
+
+            <div className="space-y-4">
+              <p 
+                className="text-[10px] tracking-[0.5em] uppercase font-light"
+                style={{ 
+                  color: '#edb98a',
+                  fontFamily: 'serif'
+                }}
+              >
+                تواصل مع كأس العالم كافيه
+              </p>
+              <h1 
+                className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light uppercase tracking-wide"
+                style={{
+                  background: "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Get In Touch
+              </h1>
+            </div>
+
+            <p className="text-base lg:text-lg text-white/70 max-w-2xl mx-auto font-light leading-relaxed">
+              Experience authentic Arabic coffee culture in the heart of Dubai Marina. We're here to serve you excellence.
             </p>
+
+            {/* Bottom decorative element */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex items-center justify-center gap-3 pt-4"
+            >
+              <div className="w-12 h-px bg-gradient-to-r from-transparent" style={{ background: "linear-gradient(to right, transparent, #edb98a)" }} />
+              <div className="w-1 h-1 rounded-full" style={{ backgroundColor: "#edb98a" }} />
+              <div className="w-12 h-px bg-gradient-to-l from-transparent" style={{ background: "linear-gradient(to left, transparent, #edb98a)" }} />
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Contact Information & Form */}
-      <section className="py-16 lg:py-24" style={{ backgroundColor: 'var(--bg-color)' }}>
+      <section className="py-20 lg:py-32" style={{ backgroundColor: 'var(--bg-color)' }}>
         <div className="max-w-7xl mx-auto px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-            {/* Contact Information */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
+            
+            {/* Contact Information - Sophisticated card design */}
             <motion.div
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              variants={fadeInUp}
-              className="space-y-8"
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div>
-                <h3 className="text-xl mb-2" style={{ color: 'var(--heading-color)' }}>معلومات الاتصال</h3>
-                <h2 className="text-3xl lg:text-4xl font-bold mb-8" style={{ color: 'var(--heading-color)' }}>Contact Information</h2>
-              </div>
-
-              {/* Location */}
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'var(--heading-color)' }}>
-                  <svg className="w-6 h-6" style={{ color: 'var(--bg-color)' }} fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/>
-                  </svg>
-                </div>
+              <div className="space-y-10">
                 <div>
-                  <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--heading-color)' }}>Location</h3>
-                  <p style={{ color: 'var(--text-color)' }}>
-                    Dubai Marina Walk<br />
-                    Marina Promenade, Building 4<br />
-                    Dubai Marina, Dubai<br />
-                    United Arab Emirates
+                  <p 
+                    className="text-[10px] tracking-[0.4em] uppercase font-light mb-4"
+                    style={{ 
+                      color: '#edb98a',
+                      fontFamily: 'serif'
+                    }}
+                  >
+                    معلومات التواصل
                   </p>
+                  <h2 
+                    className="text-3xl lg:text-4xl font-light uppercase tracking-wide"
+                    style={{
+                      background: "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    Contact <span>Information</span>
+                  </h2>
                 </div>
-              </div>
+                
+                <div className="space-y-8">
+                  {/* Address Card */}
+                  <div className="group relative">
+                    <div className="absolute -left-4 top-0 w-px h-full bg-gradient-to-b from-yellow-500 via-yellow-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(to bottom, #edb98a, rgba(237, 185, 138, 0.5), transparent)" }} />
+                    <div className="pl-6 space-y-2">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-8 h-8 border flex items-center justify-center" style={{ borderColor: "rgba(237, 185, 138, 0.3)" }}>
+                          <svg className="w-4 h-4" style={{ color: "#edb98a" }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+                        </div>
+                        <h3 className="text-xs tracking-[0.3em] uppercase font-light" style={{ color: "#edb98a" }}>Location</h3>
+                      </div>
+                      <p className="text-sm text-white/80 leading-relaxed font-light">
+                        World Cup Cafe<br />
+                        Dubai Marina Walk, Marina Promenade<br />
+                        Dubai Marina, Dubai<br />
+                        United Arab Emirates
+                      </p>
+                    </div>
+                  </div>
 
-              {/* Phone */}
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'var(--heading-color)' }}>
-                  <svg className="w-6 h-6" style={{ color: 'var(--bg-color)' }} fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--heading-color)' }}>Phone</h3>
-                  <p style={{ color: 'var(--text-color)' }}>
-                    +971 4 368 9999<br />
-                    +971 50 123 4567 (WhatsApp)
-                  </p>
-                </div>
-              </div>
+                  {/* Phone Card */}
+                  <div className="group relative">
+                    <div className="absolute -left-4 top-0 w-px h-full bg-gradient-to-b from-yellow-500 via-yellow-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(to bottom, #edb98a, rgba(237, 185, 138, 0.5), transparent)" }} />
+                    <div className="pl-6 space-y-2">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-8 h-8 border flex items-center justify-center" style={{ borderColor: "rgba(237, 185, 138, 0.3)" }}>
+                          <svg className="w-4 h-4" style={{ color: "#edb98a" }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                          </svg>
+                        </div>
+                        <h3 className="text-xs tracking-[0.3em] uppercase font-light" style={{ color: "#edb98a" }}>Phone</h3>
+                      </div>
+                      <p className="text-sm text-white/80 font-light">+971 4 368 9999</p>
+                      <p className="text-sm text-white/80 font-light">+971 50 123 4567 (WhatsApp)</p>
+                    </div>
+                  </div>
 
-              {/* Email */}
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'var(--heading-color)' }}>
-                  <svg className="w-6 h-6" style={{ color: 'var(--bg-color)' }} fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--heading-color)' }}>Email</h3>
-                  <p style={{ color: 'var(--text-color)' }}>
-                    info@worldcupcafe.ae<br />
-                    reservations@worldcupcafe.ae
-                  </p>
-                </div>
-              </div>
+                  {/* Email Card */}
+                  <div className="group relative">
+                    <div className="absolute -left-4 top-0 w-px h-full bg-gradient-to-b from-yellow-500 via-yellow-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(to bottom, #edb98a, rgba(237, 185, 138, 0.5), transparent)" }} />
+                    <div className="pl-6 space-y-2">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-8 h-8 border flex items-center justify-center" style={{ borderColor: "rgba(237, 185, 138, 0.3)" }}>
+                          <svg className="w-4 h-4" style={{ color: "#edb98a" }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                        </div>
+                        <h3 className="text-xs tracking-[0.3em] uppercase font-light" style={{ color: "#edb98a" }}>Email</h3>
+                      </div>
+                      <p className="text-sm text-white/80 font-light">info@worldcupcafe.ae</p>
+                      <p className="text-sm text-white/80 font-light">reservations@worldcupcafe.ae</p>
+                    </div>
+                  </div>
 
-              {/* Hours */}
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'var(--heading-color)' }}>
-                  <svg className="w-6 h-6" style={{ color: 'var(--bg-color)' }} fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z"/>
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--heading-color)' }}>Opening Hours</h3>
-                  <div style={{ color: 'var(--text-color)' }}>
-                    <p>Saturday - Thursday: 7:00 AM - 12:00 AM</p>
-                    <p>Friday: 2:00 PM - 12:00 AM</p>
-                    <p className="text-sm mt-2 opacity-80">*Shisha service available from 6:00 PM</p>
+                  {/* Working Hours Card */}
+                  <div className="group relative">
+                    <div className="absolute -left-4 top-0 w-px h-full bg-gradient-to-b from-yellow-500 via-yellow-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(to bottom, #edb98a, rgba(237, 185, 138, 0.5), transparent)" }} />
+                    <div className="pl-6 space-y-2">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-8 h-8 border flex items-center justify-center" style={{ borderColor: "rgba(237, 185, 138, 0.3)" }}>
+                          <svg className="w-4 h-4" style={{ color: "#edb98a" }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </div>
+                        <h3 className="text-xs tracking-[0.3em] uppercase font-light" style={{ color: "#edb98a" }}>Hours</h3>
+                      </div>
+                      <p className="text-sm text-white/80 font-light">Saturday - Thursday: 7:00 AM - 12:00 AM</p>
+                      <p className="text-sm text-white/80 font-light">Friday: 2:00 PM - 12:00 AM</p>
+                      <p className="text-sm text-white/80 font-light">Shisha: 6:00 PM onwards</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Contact Form */}
+            {/* Contact Form - Modern glass morphism design */}
             <motion.div
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ delay: 0.2 }}
-              className="p-8 rounded-lg shadow-2xl"
-              style={{ backgroundColor: 'var(--heading-color)' }}
+              transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
-              <h3 className="text-xl mb-2" style={{ color: 'var(--bg-color)' }}>أرسل لنا رسالة</h3>
-              <h2 className="text-2xl lg:text-3xl font-bold mb-6" style={{ color: 'var(--bg-color)' }}>Send us a Message</h2>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium mb-2" style={{ color: 'var(--bg-color)' }}>
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-md border-2 focus:outline-none focus:ring-2 transition-all duration-300"
-                    style={{ 
-                      backgroundColor: 'transparent',
-                      borderColor: 'var(--bg-color)',
-                      color: 'var(--bg-color)'
-                    }}
-                    placeholder="Enter your full name"
-                  />
-                </div>
+              <div className="relative backdrop-blur-sm bg-white/[0.02] border border-white/10 p-8 lg:p-10">
+                {/* Corner accents */}
+                <div className="absolute top-0 right-0 w-16 h-16 border-t border-r" style={{ borderColor: "rgba(237, 185, 138, 0.2)" }} />
+                <div className="absolute bottom-0 left-0 w-16 h-16 border-b border-l" style={{ borderColor: "rgba(237, 185, 138, 0.2)" }} />
 
-                <div>
-                  <label className="block text-sm font-medium mb-2" style={{ color: 'var(--bg-color)' }}>
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-md border-2 focus:outline-none focus:ring-2 transition-all duration-300"
-                    style={{ 
-                      backgroundColor: 'transparent',
-                      borderColor: 'var(--bg-color)',
-                      color: 'var(--bg-color)'
-                    }}
-                    placeholder="Enter your email"
-                  />
-                </div>
+                <div className="space-y-8">
+                  <div>
+                    <p 
+                      className="text-[10px] tracking-[0.4em] uppercase font-light mb-4"
+                      style={{ 
+                        color: '#edb98a',
+                        fontFamily: 'serif'
+                      }}
+                    >
+                      أرسل رسالة
+                    </p>
+                    <h2 
+                      className="text-3xl lg:text-4xl font-light uppercase tracking-wide"
+                      style={{
+                        background: "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                      }}
+                    >
+                      Send <span>Message</span>
+                    </h2>
+                  </div>
+                  
+                  <form className="space-y-6">
+                    <div className="group">
+                      <label htmlFor="name" className="block text-[10px] tracking-[0.3em] uppercase font-light mb-3" style={{ color: "rgba(237, 185, 138, 0.7)" }}>
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        className="w-full px-0 py-3 bg-transparent border-b text-white text-sm font-light placeholder:text-white/30 focus:outline-none transition-colors duration-500"
+                        style={{ 
+                          borderBottomColor: "rgba(255, 255, 255, 0.2)",
+                        }}
+                        onFocus={(e) => e.target.style.borderBottomColor = "#edb98a"}
+                        onBlur={(e) => e.target.style.borderBottomColor = "rgba(255, 255, 255, 0.2)"}
+                        placeholder="Enter your name"
+                      />
+                    </div>
 
-                <div>
-                  <label className="block text-sm font-medium mb-2" style={{ color: 'var(--bg-color)' }}>
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-md border-2 focus:outline-none focus:ring-2 transition-all duration-300"
-                    style={{ 
-                      backgroundColor: 'transparent',
-                      borderColor: 'var(--bg-color)',
-                      color: 'var(--bg-color)'
-                    }}
-                    placeholder="Enter your phone number"
-                  />
-                </div>
+                    <div className="group">
+                      <label htmlFor="email" className="block text-[10px] tracking-[0.3em] uppercase font-light mb-3" style={{ color: "rgba(237, 185, 138, 0.7)" }}>
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        className="w-full px-0 py-3 bg-transparent border-b text-white text-sm font-light placeholder:text-white/30 focus:outline-none transition-colors duration-500"
+                        style={{ 
+                          borderBottomColor: "rgba(255, 255, 255, 0.2)",
+                        }}
+                        onFocus={(e) => e.target.style.borderBottomColor = "#edb98a"}
+                        onBlur={(e) => e.target.style.borderBottomColor = "rgba(255, 255, 255, 0.2)"}
+                        placeholder="your.email@example.com"
+                      />
+                    </div>
 
-                <div>
-                  <label className="block text-sm font-medium mb-2" style={{ color: 'var(--bg-color)' }}>
-                    Message *
-                  </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="5"
-                    className="w-full px-4 py-3 rounded-md border-2 focus:outline-none focus:ring-2 transition-all duration-300 resize-none"
-                    style={{ 
-                      backgroundColor: 'transparent',
-                      borderColor: 'var(--bg-color)',
-                      color: 'var(--bg-color)'
-                    }}
-                    placeholder="Tell us about your inquiry or reservation..."
-                  ></textarea>
-                </div>
+                    <div className="group">
+                      <label htmlFor="phone" className="block text-[10px] tracking-[0.3em] uppercase font-light mb-3" style={{ color: "rgba(237, 185, 138, 0.7)" }}>
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        className="w-full px-0 py-3 bg-transparent border-b text-white text-sm font-light placeholder:text-white/30 focus:outline-none transition-colors duration-500"
+                        style={{ 
+                          borderBottomColor: "rgba(255, 255, 255, 0.2)",
+                        }}
+                        onFocus={(e) => e.target.style.borderBottomColor = "#edb98a"}
+                        onBlur={(e) => e.target.style.borderBottomColor = "rgba(255, 255, 255, 0.2)"}
+                        placeholder="+971 XXX XXX XXXX"
+                      />
+                    </div>
 
-                <button
-                  type="submit"
-                  className="w-full px-8 py-4 text-sm font-bold uppercase tracking-wider transition-all duration-300 rounded-md"
-                  style={{
-                    backgroundColor: 'var(--bg-color)',
-                    color: 'var(--heading-color)',
-                    border: '2px solid var(--bg-color)'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.backgroundColor = 'transparent';
-                    e.target.style.color = 'var(--bg-color)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.backgroundColor = 'var(--bg-color)';
-                    e.target.style.color = 'var(--heading-color)';
-                  }}
-                >
-                  Send Message
-                </button>
-              </form>
+                    <div className="group">
+                      <label htmlFor="subject" className="block text-[10px] tracking-[0.3em] uppercase font-light mb-3" style={{ color: "rgba(237, 185, 138, 0.7)" }}>
+                        Subject
+                      </label>
+                      <input
+                        type="text"
+                        id="subject"
+                        className="w-full px-0 py-3 bg-transparent border-b text-white text-sm font-light placeholder:text-white/30 focus:outline-none transition-colors duration-500"
+                        style={{ 
+                          borderBottomColor: "rgba(255, 255, 255, 0.2)",
+                        }}
+                        onFocus={(e) => e.target.style.borderBottomColor = "#edb98a"}
+                        onBlur={(e) => e.target.style.borderBottomColor = "rgba(255, 255, 255, 0.2)"}
+                        placeholder="How can we help?"
+                      />
+                    </div>
+
+                    <div className="group">
+                      <label htmlFor="message" className="block text-[10px] tracking-[0.3em] uppercase font-light mb-3" style={{ color: "rgba(237, 185, 138, 0.7)" }}>
+                        Message
+                      </label>
+                      <textarea
+                        id="message"
+                        rows={5}
+                        className="w-full px-0 py-3 bg-transparent border-b text-white text-sm font-light placeholder:text-white/30 focus:outline-none transition-colors duration-500 resize-none"
+                        style={{ 
+                          borderBottomColor: "rgba(255, 255, 255, 0.2)",
+                        }}
+                        onFocus={(e) => e.target.style.borderBottomColor = "#edb98a"}
+                        onBlur={(e) => e.target.style.borderBottomColor = "rgba(255, 255, 255, 0.2)"}
+                        placeholder="Your message..."
+                      ></textarea>
+                    </div>
+
+                    <div className="pt-4">
+                      <button
+                        type="submit"
+                        className="group relative w-full border py-4 font-light text-xs tracking-[0.3em] uppercase transition-all duration-500 overflow-hidden"
+                        style={{ 
+                          borderColor: "rgba(237, 185, 138, 0.3)",
+                          color: "#edb98a"
+                        }}
+                        onMouseEnter={(e) => e.target.style.borderColor = "#edb98a"}
+                        onMouseLeave={(e) => e.target.style.borderColor = "rgba(237, 185, 138, 0.3)"}
+                      >
+                        <span className="relative z-10 group-hover:text-black transition-colors duration-500">Send Message</span>
+                        <div 
+                          className="absolute inset-0 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500"
+                          style={{
+                            background: "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
+                          }}
+                        />
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-16 lg:py-24" style={{ backgroundColor: 'var(--bg-color)' }}>
-        <div className="max-w-7xl mx-auto px-8 lg:px-12">
+      {/* Map Section - Elegant placeholder */}
+      <section className="relative h-96 border-t border-white/10 overflow-hidden" style={{ backgroundColor: 'var(--bg-color)' }}>
+        {/* Decorative grid pattern */}
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="grid grid-cols-12 h-full">
+            {[...Array(12)].map((_, i) => (
+              <div key={i} className="border-r" style={{ borderColor: "#edb98a" }} />
+            ))}
+          </div>
+        </div>
+
+        <div className="relative w-full h-full flex flex-col items-center justify-center text-white space-y-6">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center mb-12"
+            transition={{ duration: 0.6 }}
+            className="text-center space-y-4"
           >
-            <h3 className="text-xl mb-2" style={{ color: 'var(--heading-color)' }}>موقعنا على الخريطة</h3>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: 'var(--heading-color)' }}>Find Us</h2>
-            <p className="max-w-2xl mx-auto text-lg" style={{ color: 'var(--text-color)' }}>
-              Located in the heart of Dubai Marina with stunning waterfront views and easy access to public transportation.
+            <div className="w-16 h-16 mx-auto border flex items-center justify-center" style={{ borderColor: "rgba(237, 185, 138, 0.3)" }}>
+              <svg className="w-8 h-8" style={{ color: "#edb98a" }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <p className="text-xs tracking-[0.3em] uppercase font-light" style={{ color: "#edb98a" }}>
+              Visit Our Location
+            </p>
+            <p className="text-sm text-white/60 font-light">
+              Dubai Marina, UAE
             </p>
           </motion.div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            transition={{ delay: 0.2 }}
-            className="rounded-lg overflow-hidden shadow-2xl h-96"
-            style={{ backgroundColor: 'var(--heading-color)' }}
-          >
-            <div className="w-full h-full flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--bg-color)' }}>
-                  <svg className="w-8 h-8" style={{ color: 'var(--heading-color)' }} fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--bg-color)' }}>Dubai Marina Walk</h3>
-                <p style={{ color: 'var(--bg-color)' }}>Interactive map will be integrated here</p>
-                <p className="text-sm mt-2" style={{ color: 'var(--bg-color)', opacity: 0.8 }}>
-                  Marina Promenade, Building 4, Dubai Marina
-                </p>
-              </div>
-            </div>
-          </motion.div>
+          {/* Decorative corner elements */}
+          <div className="absolute top-0 left-0 w-32 h-32 border-t border-l" style={{ borderColor: "rgba(237, 185, 138, 0.1)" }} />
+          <div className="absolute top-0 right-0 w-32 h-32 border-t border-r" style={{ borderColor: "rgba(237, 185, 138, 0.1)" }} />
+          <div className="absolute bottom-0 left-0 w-32 h-32 border-b border-l" style={{ borderColor: "rgba(237, 185, 138, 0.1)" }} />
+          <div className="absolute bottom-0 right-0 w-32 h-32 border-b border-r" style={{ borderColor: "rgba(237, 185, 138, 0.1)" }} />
         </div>
       </section>
     </main>
