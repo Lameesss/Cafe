@@ -1,165 +1,209 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function ImageContent() {
-  const gradientTextStyle = {
-    background:
-      "linear-gradient(135deg, var(--heading-color) 0%, #d4a574 30%, #c49660 70%, var(--heading-color) 100%)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    backgroundClip: "text",
-  };
-
-  const gradientBorderStyle = {
-    background:
-      "linear-gradient(135deg, var(--heading-color) 0%, #d4a574 30%, #c49660 70%, var(--heading-color) 100%)",
-  };
-
   return (
     <section className="w-full" style={{ backgroundColor: "var(--bg-color)" }}>
       {/* Section 1: Image Left, Text Right */}
       <div className="w-full py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-8 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col gap-4 lg:gap-3"
-          >
-            <div className="flex items-center justify-between gap-4">
-              <motion.h2
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-                className="text-xs sm:text-sm font-bold uppercase tracking-[0.35em]"
-                style={gradientTextStyle}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left - Image */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative w-full h-[450px] lg:h-[550px]"
+            >
+              <Image
+                src="/images/118.jpg"
+                alt="World Cup Source"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </motion.div>
+
+            {/* Right - Text */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
+              <h2
+                className="text-xl sm:text-2xl lg:text-3xl font-black uppercase leading-tight"
+                style={{ color: "var(--heading-color)" }}
               >
-                WORLD CUP CAFE
-              </motion.h2>
-
-              <span
-                className="hidden sm:inline-block text-[11px] font-semibold tracking-[0.3em] uppercase"
-                style={{ color: "var(--text-color)", opacity: 0.75 }}
+                CRAFTED AT WORLD CUP
+              </h2>
+              <p
+                className="text-sm sm:text-base leading-relaxed"
+                style={{ color: "var(--text-color)" }}
               >
-                WORLD CUP
-              </span>
-            </div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9, delay: 0.2 }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
-              style={gradientTextStyle}
-            >
-              World Cup Rebranding
-            </motion.h1>
-
-            <motion.h3
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9, delay: 0.3 }}
-              className="text-base sm:text-lg font-semibold"
-              style={gradientTextStyle}
-            >
-              A New Chapter of Coffee Elegance & Simplicity
-            </motion.h3>
-
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9, delay: 0.4 }}
-              className="text-sm sm:text-base lg:text-lg max-w-2xl"
-              style={{ color: "var(--text-color)", opacity: 0.9 }}
-            >
-              From handcrafted Arabic coffee to golden details in every cup, our
-              new visual identity reflects the warmth, elegance, and simplicity
-              of World Cup Cafe.
-            </motion.p>
-          </motion.div>
+                Every cup begins with carefully selected beans from sustainable
+                farms around the world. Our expert roasters bring out the unique
+                flavors and aromas that make each blend extraordinary.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-block px-8 py-4 border-2 text-sm font-bold uppercase tracking-widest transition-all duration-300"
+                style={{
+                  borderColor: "var(--heading-color)",
+                  color: "var(--heading-color)",
+                  backgroundColor: "transparent",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "var(--heading-color)";
+                  e.target.style.color = "var(--bg-color)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "transparent";
+                  e.target.style.color = "var(--heading-color)";
+                }}
+              >
+                OUR PROCESS
+              </Link>
+            </motion.div>
+          </div>
         </div>
       </div>
 
       {/* Section 2: Image Right, Text Left */}
-      <div className="w-full pb-10">
+      <div className="w-full py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-8 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, ease: "easeOut" }}
-            className="relative rounded-[32px] p-[2px]"
-            style={gradientBorderStyle}
-          >
-            <div
-              className="relative w-full h-[260px] sm:h-[320px] lg:h-[380px] rounded-[30px] overflow-hidden"
-              style={{ backgroundColor: "var(--bg-color)" }}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left - Text */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6 lg:order-1 order-2"
+            >
+              <h2
+                className="text-xl sm:text-2xl lg:text-3xl font-black uppercase leading-tight"
+                style={{ color: "var(--heading-color)" }}
+              >
+                THE WORLD CUP CAFE DIFFERENCE
+              </h2>
+              <p
+                className="text-sm sm:text-base leading-relaxed"
+                style={{ color: "var(--text-color)" }}
+              >
+                Expertly roasted beans with the perfect balance of flavor and
+                aroma. Each cup is crafted with precision and passion to deliver
+                an exceptional coffee experience.
+              </p>
+              <Link
+                href="/about"
+                className="inline-block px-8 py-4 border-2 text-sm font-bold uppercase tracking-widest transition-all duration-300"
+                style={{
+                  borderColor: "var(--heading-color)",
+                  color: "var(--heading-color)",
+                  backgroundColor: "transparent",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "var(--heading-color)";
+                  e.target.style.color = "var(--bg-color)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "transparent";
+                  e.target.style.color = "var(--heading-color)";
+                }}
+              >
+                OUR COFFEE
+              </Link>
+            </motion.div>
+
+            {/* Right - Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative w-full h-[450px] lg:h-[550px] lg:order-2 order-1"
             >
               <Image
-                src="/images/000.png"
-                alt="World Cup Cafe pastry branding"
+                src="/images/image33.jpg"
+                alt="World Cup Difference"
                 fill
-                className="object-cover rounded-[30px]"
-                sizes="(max-width: 1024px) 100vw, 100vw"
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </div>
 
       {/* Section 3: Image Left, Text Right */}
-      <div className="w-full pb-16 lg:pb-20">
+      <div className="w-full py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-8 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left - Image */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.9, delay: 0.1 }}
-              className="relative rounded-[32px] p-[2px]"
-              style={gradientBorderStyle}
+              transition={{ duration: 0.6 }}
+              className="relative w-full h-[450px] lg:h-[550px]"
             >
-              <div
-                className="relative w-full h-[260px] sm:h-[320px] lg:h-[340px] rounded-[30px] overflow-hidden"
-                style={{ backgroundColor: "var(--bg-color)" }}
-              >
-                <Image
-                  src="/images/image33.jpg"
-                  alt="World Cup Cafe golden coffee cup"
-                  fill
-                  className="object-cover rounded-[30px]"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
+              <Image
+                src="/images/118.jpg"
+                alt="World Cup Awards"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </motion.div>
 
+            {/* Right - Text */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.9, delay: 0.2 }}
-              className="relative rounded-[32px] p-[2px]"
-              style={gradientBorderStyle}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
             >
-              <div
-                className="relative w-full h-[260px] sm:h-[320px] lg:h-[340px] rounded-[30px] overflow-hidden"
-                style={{ backgroundColor: "var(--bg-color)" }}
+              <h2
+                className="text-xl sm:text-2xl lg:text-3xl font-black uppercase leading-tight"
+                style={{ color: "var(--heading-color)" }}
               >
-                <Image
-                  src="/images/product1.png"
-                  alt="World Cup Cafe exterior signage"
-                  fill
-                  className="object-cover rounded-[30px]"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
+                AWARDS & CERTIFICATIONS
+              </h2>
+              <p
+                className="text-sm sm:text-base leading-relaxed"
+                style={{ color: "var(--text-color)" }}
+              >
+                World Cup Cafe maintains the highest standards in coffee quality
+                and preparation. Our baristas are certified and our beans are
+                sourced from award-winning farms committed to sustainable
+                practices and exceptional quality.
+              </p>
+              <Link
+                href="/about"
+                className="inline-block px-8 py-4 border-2 text-sm font-bold uppercase tracking-widest transition-all duration-300"
+                style={{
+                  borderColor: "var(--heading-color)",
+                  color: "var(--heading-color)",
+                  backgroundColor: "transparent",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "var(--heading-color)";
+                  e.target.style.color = "var(--bg-color)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "transparent";
+                  e.target.style.color = "var(--heading-color)";
+                }}
+              >
+                LEARN MORE
+              </Link>
             </motion.div>
           </div>
         </div>
