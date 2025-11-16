@@ -140,7 +140,8 @@ export default function Banner() {
                   backgroundClip: "text",
                 }}
               >
-                BEEF BUR
+                                  شاورما
+
               </div>
             </div>
 
@@ -263,7 +264,7 @@ export default function Banner() {
                   backgroundClip: "text",
                 }}
               >
-                شاورما
+                  شاورما
               </div>
             </div>
 
@@ -321,7 +322,7 @@ export default function Banner() {
               >
                 <span className="text-7xl">C</span>
                 <span className="text-6xl -mt-3">K</span>
-                <span className="text-xs tracking-widest mt-1">ROLL</span>
+                <span className="text-xs tracking-widest mt-1">BURGER</span>
               </div>
             </div>
 
@@ -401,7 +402,8 @@ export default function Banner() {
                       backgroundClip: "text",
                     }}
                   >
-                    BEEF BUR
+                                      شاورما
+
                   </div>
                 </div>
 
@@ -438,9 +440,9 @@ export default function Banner() {
                     }}
                   >
                     <span className="inline-block border-2 border-[#edb98a] px-1">
-                      EMC
+                      ICE 
                     </span>
-                    <span>PREMIUM</span>
+                    <span>CREAM</span>
                   </div>
                 </div>
 
@@ -526,7 +528,8 @@ export default function Banner() {
                       backgroundClip: "text",
                     }}
                   >
-                    BEEF BUR
+                                      شاورما
+
                   </div>
                 </div>
 
@@ -563,9 +566,9 @@ export default function Banner() {
                     }}
                   >
                     <span className="inline-block border-2 border-[#edb98a] px-1">
-                      EMC
+                      ICE 
                     </span>
-                    <span>PREMIUM</span>
+                    <span>CREAM</span>
                   </div>
                 </div>
 
