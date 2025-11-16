@@ -177,9 +177,9 @@ export default function Banner() {
                 }}
               >
                 <span className="inline-block border-4 border-[#edb98a] px-2">
-                  EMC{" "}
+                  ICE{" "}
                 </span>
-                <span>PREMIUM</span>
+                <span>CREAM</span>
               </div>
             </div>
 
@@ -208,18 +208,26 @@ export default function Banner() {
                 className=" font-bold uppercase flex flex-col items-start leading-tight"
                 style={{
                   fontFamily: "Arial, sans-serif",
-                  background:
-                    "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
                 }}
               >
-                <div className="bg-white text-blue-800 px-3 py-1 text-lg font-black">
+                <div className="px-3 py-1 text-lg font-black" style={{ 
+                  background: "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
+                  color: "#064c4c",
+                  WebkitTextFillColor: "#064c4c",
+                }}>
                   <span>MAC</span>
                 </div>
-                <div className="text-sm font-bold mt-1">
-                  <span>N</span> <span className="text-xs">CHEESE</span>
+                <div 
+                  className="text-sm font-bold mt-1"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
+                   <span>N</span>   <span className="text-xs">CHEESE</span>
                 </div>
               </div>
             </div>
@@ -255,7 +263,7 @@ export default function Banner() {
                   backgroundClip: "text",
                 }}
               >
-                BEEF BUR
+                شاورما
               </div>
             </div>
 
@@ -292,9 +300,9 @@ export default function Banner() {
                 }}
               >
                 <span className="inline-block border-4 border-[#edb98a] px-2">
-                  EMC{" "}
+                  ICE{" "}
                 </span>
-                <span>PREMIUM</span>
+                <span>CREAM</span>
               </div>
             </div>
 
@@ -313,7 +321,7 @@ export default function Banner() {
               >
                 <span className="text-7xl">C</span>
                 <span className="text-6xl -mt-3">K</span>
-                <span className="text-xs tracking-widest mt-1">BURGER</span>
+                <span className="text-xs tracking-widest mt-1">ROLL</span>
               </div>
             </div>
 
@@ -323,17 +331,25 @@ export default function Banner() {
                 className=" font-bold uppercase flex flex-col items-start leading-tight"
                 style={{
                   fontFamily: "Arial, sans-serif",
-                  background:
-                    "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
                 }}
               >
-                <div className="bg-white text-blue-800 px-3 py-1 text-lg font-black">
+                <div className="px-3 py-1 text-lg font-black" style={{ 
+                  background: "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
+                  color: "#064c4c",
+                  WebkitTextFillColor: "#064c4c",
+                }}>
                   <span>MAC</span>
                 </div>
-                <div className="text-sm font-bold mt-1">
+                <div 
+                  className="text-sm font-bold mt-1"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
                   <span>N</span> <span className="text-xs">CHEESE</span>
                 </div>
               </div>
@@ -455,17 +471,25 @@ export default function Banner() {
                     className=" font-bold uppercase flex flex-col items-center leading-tight"
                     style={{
                       fontFamily: "Arial, sans-serif",
-                      background:
-                        "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
                     }}
                   >
-                    <div className="bg-white text-blue-800 px-2 py-0.5 text-sm font-black">
+                    <div className="px-2 py-0.5 text-sm font-black" style={{ 
+                      background: "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
+                      color: "#064c4c",
+                      WebkitTextFillColor: "#064c4c",
+                    }}>
                       <span>MAC</span>
                     </div>
-                    <div className="text-xs font-bold mt-1">
+                    <div 
+                      className="text-xs font-bold mt-1"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                      }}
+                    >
                       <span>N</span> <span className="text-[8px]">CHEESE</span>
                     </div>
                   </div>
@@ -572,17 +596,25 @@ export default function Banner() {
                     className=" font-bold uppercase flex flex-col items-center leading-tight"
                     style={{
                       fontFamily: "Arial, sans-serif",
-                      background:
-                        "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
                     }}
                   >
-                    <div className="bg-white text-blue-800 px-2 py-0.5 text-sm font-black">
+                    <div className="px-2 py-0.5 text-sm font-black" style={{ 
+                      background: "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
+                      color: "#064c4c",
+                      WebkitTextFillColor: "#064c4c",
+                    }}>
                       <span>MAC</span>
                     </div>
-                    <div className="text-xs font-bold mt-1">
+                    <div 
+                      className="text-xs font-bold mt-1"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                      }}
+                    >
                       <span>N</span> <span className="text-[8px]">CHEESE</span>
                     </div>
                   </div>

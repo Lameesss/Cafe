@@ -101,48 +101,15 @@ export default function OurStory() {
               }}
             >
               <div className="relative rounded-[1.75rem] overflow-hidden bg-white">
-                <div className="aspect-[4/3] bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                  {/* Placeholder for cafe image */}
-                  <div className="text-gray-500 text-center">
-                    <div className="w-16 h-16 mx-auto mb-4 bg-gray-400 rounded-full flex items-center justify-center">
-                      <svg
-                        className="w-8 h-8"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                    <p className="text-sm">Cafe Interior Image</p>
-                  </div>
+                <div className="aspect-[4/3] relative">
+                  <Image
+                    src="/images/ourstory2.jpg"
+                    alt="World Cup Cafe Interior"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
                 </div>
-
-                {/* Decorative Elements */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3, duration: 0.6 }}
-                  className="absolute -top-4 -right-4 w-20 h-20 rounded-full"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
-                    opacity: 0.9,
-                  }}
-                />
-
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5, duration: 0.6 }}
-                  className="absolute -bottom-6 -left-6 w-16 h-16 rounded-full border-4"
-                  style={{ borderColor: "#edb98a" }}
-                />
               </div>
             </div>
           </motion.div>

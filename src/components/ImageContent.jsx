@@ -142,7 +142,7 @@ export default function ImageContent() {
                 style={{ backgroundColor: "var(--bg-color)" }}
               >
                 <Image
-                  src="/images/000.png"
+                  src="/images/01.jpg"
                   alt="World Cup Cafe exterior storefront"
                   fill
                   className="object-cover"
@@ -170,7 +170,7 @@ export default function ImageContent() {
                   style={{ backgroundColor: "var(--bg-color)" }}
                 >
                   <Image
-                    src="/images/image33.jpg"
+                    src="/images/02.jpg"
                     alt="World Cup Cafe branded packaging"
                     fill
                     className="object-cover"
@@ -195,7 +195,7 @@ export default function ImageContent() {
                   style={{ backgroundColor: "var(--bg-color)" }}
                 >
                   <Image
-                    src="/images/product1.png"
+                    src="/images/04.jpg"
                     alt="World Cup Cafe coffee cup and pastry"
                     fill
                     className="object-cover"

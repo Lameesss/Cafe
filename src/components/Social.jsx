@@ -59,14 +59,17 @@ export default function Social() {
             ))}
           </motion.div>
 
-          {/* Text Area with Blue Background - Second on mobile, Left on desktop */}
+          {/* Text Area with Golden Gradient Background - Second on mobile, Left on desktop */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInLeft}
             className="order-2 lg:order-1 flex items-center justify-center"
-            style={{ backgroundColor: 'var(--heading-color)' }}
+            style={{ 
+              background: 'linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)',
+              color: 'var(--bg-color)' 
+            }}
           >
             <div className="text-center lg:text-right p-12 lg:p-16" style={{ color: 'var(--bg-color)' }}>
               <motion.h2

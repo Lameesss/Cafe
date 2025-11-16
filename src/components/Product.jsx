@@ -9,20 +9,20 @@ export default function Product() {
   const products = [
     {
       id: 1,
-      name: "ESPRESSO",
-      image: "/images/product2.png",
+      name: "ROOBRUMAN",
+      image: "/images/ruman.png",
       link: "/product/espresso",
     },
     {
       id: 2,
-      name: "CAPPUCCINO",
-      image: "/images/product3.png",
+      name: "AVOCADO",
+      image: "/images/avocado.png",
       link: "/product/cappuccino",
     },
     {
       id: 3,
-      name: "LATTE",
-      image: "/images/product4.png",
+      name: "POMEGRANATE",
+      image: "/images/POMO.png",
       link: "/product/latte",
     },
   ];

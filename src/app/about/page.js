@@ -117,7 +117,7 @@ export default function About() {
               <div className="relative rounded-[2rem] p-1 shadow-2xl" style={gradientBorderStyle}>
                 <div className="relative w-full h-[400px] lg:h-[500px] rounded-[1.75rem] overflow-hidden" style={{ backgroundColor: "var(--bg-color)" }}>
                   <Image
-                    src="/images/000.png"
+                    src="/images/03.jpg"
                     alt="World Cup Cafe - Premium Arabic Coffee Experience"
                     fill
                     className="object-cover"
@@ -125,28 +125,6 @@ export default function About() {
                   />
                 </div>
               </div>
-
-              {/* Decorative Elements */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.6, duration: 0.6 }}
-                className="absolute -top-6 -right-6 w-24 h-24 rounded-full"
-                style={{
-                  background: "linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)",
-                  opacity: 0.8,
-                }}
-              />
-              
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.8, duration: 0.6 }}
-                className="absolute -bottom-8 -left-8 w-20 h-20 rounded-full border-4"
-                style={{ borderColor: "#edb98a", opacity: 0.6 }}
-              />
             </motion.div>
           </div>
         </div>
