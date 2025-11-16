@@ -22,7 +22,7 @@ export default function Product() {
     {
       id: 3,
       name: "POMEGRANATE",
-      image: "/images/POMO.png",
+      image: "/images/pomo.png",
       link: "/product/latte",
     },
   ];
