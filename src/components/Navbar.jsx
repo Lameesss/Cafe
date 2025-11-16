@@ -251,10 +251,10 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: -50 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -50 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
             className="lg:hidden fixed inset-0 z-40 overflow-hidden"
             style={{
               background: 'linear-gradient(135deg, rgba(6, 76, 76, 0.98) 0%, rgba(6, 76, 76, 0.95) 100%)',
@@ -274,74 +274,63 @@ export default function Navbar() {
             <div className="flex flex-col h-full pt-20 pb-8 px-6 justify-center">
               {/* Navigation Links */}
               <div className="space-y-2 mb-8">
-                {navItems.map((item, index) => (
-                  <motion.div
+                {navItems.map((item) => (
+                  <Link
                     key={item.href}
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: 0.1 * index }}
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="group flex items-center justify-between py-5 px-6 rounded-xl transition-all duration-300"
+                    style={{
+                      background: 'transparent',
+                      border: '2px solid transparent'
+                    }}
                   >
-                    <Link
-                      href={item.href}
-                      onClick={() => setIsOpen(false)}
-                      className="group flex items-center justify-between py-5 px-6 rounded-xl transition-all duration-300"
-                      style={{
-                        background: 'transparent',
-                        border: '2px solid transparent'
-                      }}
-                    >
-                      <div className="flex flex-col">
-                        <span 
-                          className="text-xl font-semibold group-hover:scale-105 transition-transform duration-300"
-                          style={pathname === item.href ? {
-                            background: 'linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            backgroundClip: 'text'
-                          } : {
-                            color: 'var(--text-color)'
-                          }}
-                        >
-                          {item.name}
-                        </span>
-                        <span 
-                          className="text-sm font-bold uppercase tracking-wider opacity-70 mt-1"
-                          style={{ color: 'var(--text-color)' }}
-                        >
-                          {item.nameEn}
-                        </span>
-                      </div>
-                      
-                      {/* Arrow Icon */}
-                      <svg 
-                        className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" 
-                        style={{ color: '#edb98a' }} 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
+                    <div className="flex flex-col">
+                      <span 
+                        className="text-xl font-semibold group-hover:scale-105 transition-transform duration-300"
+                        style={pathname === item.href ? {
+                          background: 'linear-gradient(135deg, #edb98a 0%, #d4a574 30%, #c49660 70%, #edb98a 100%)',
+                          WebkitBackgroundClip: 'text',
+                          WebkitTextFillColor: 'transparent',
+                          backgroundClip: 'text'
+                        } : {
+                          color: 'var(--text-color)'
+                        }}
                       >
-                        <defs>
-                          <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#edb98a" />
-                            <stop offset="30%" stopColor="#d4a574" />
-                            <stop offset="70%" stopColor="#c49660" />
-                            <stop offset="100%" stopColor="#edb98a" />
-                          </linearGradient>
-                        </defs>
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} stroke="url(#arrowGradient)" d="M9 5l7 7-7 7" />
-                      </svg>
-                    </Link>
-                  </motion.div>
+                        {item.name}
+                      </span>
+                      <span 
+                        className="text-sm font-bold uppercase tracking-wider opacity-70 mt-1"
+                        style={{ color: 'var(--text-color)' }}
+                      >
+                        {item.nameEn}
+                      </span>
+                    </div>
+                    
+                    {/* Arrow Icon */}
+                    <svg 
+                      className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" 
+                      style={{ color: '#edb98a' }} 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <defs>
+                        <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stopColor="#edb98a" />
+                          <stop offset="30%" stopColor="#d4a574" />
+                          <stop offset="70%" stopColor="#c49660" />
+                          <stop offset="100%" stopColor="#edb98a" />
+                        </linearGradient>
+                      </defs>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} stroke="url(#arrowGradient)" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
                 ))}
               </div>
 
               {/* Mobile Reservation Button */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-                className="px-8"
-              >
+              <div className="px-8">
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
@@ -366,7 +355,7 @@ export default function Navbar() {
                   {/* English Text */}
                   <span className="relative z-10 text-sm font-semibold opacity-90 mt-1 leading-tight tracking-wide">RESERVE YOUR TABLE</span>
                 </Link>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         )}
