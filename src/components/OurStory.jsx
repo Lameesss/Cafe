@@ -33,7 +33,7 @@ export default function OurStory() {
               backgroundClip: "text",
             }}
           >
-            Our Story
+            OUR STORY
           </motion.h2>
 
           {/* Subtitle with White Line */}
